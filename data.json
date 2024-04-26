@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/n1H3bKG/landscape-painting.jpg",
+    "item_name": "Mountain View Canvas",
+    "subcategory_Name": "Landscape Painting",
+    "short_description": "A stunning landscape painting capturing the beauty of mountains under a clear sky.",
+    "price": 250,
+    "rating": 4.6,
+    "customization": "Yes",
+    "processing_time": "1-2 weeks",
+    "stockStatus": "In stock"
+
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/ws13ypm/image.webp",
+    "item_name": "Forest Landscape Painting",
+    "subcategory_Name": "Landscape Painting",
+    "short_description": "An enchanting painting depicting a peaceful forest scene with vibrant colors.",
+    "price": 220,
+    "rating": 4.4,
+    "customization": "No",
+    "processing_time": "3-5 days",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/RTmJTFx/sketch.jpg",
+    "item_name": "Pencil Sketch Portrait",
+    "subcategory_Name": "Portrait Drawing",
+    "short_description": "A detailed pencil sketch capturing the likeness and personality of the subject.",
+    "price": 180,
+    "rating": 4.3,
+    "customization": "Yes",
+    "processing_time": "1 week",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/nry883G/potrait-drawing.jpg",
+    "item_name": "Ink Outline Portrait",
+    "subcategory_Name": "Portrait Drawing",
+    "short_description": "An elegant portrait outlined with ink, highlighting the subject's features.",
+    "price": 200,
+    "rating": 4.5,
+    "customization": "No",
+    "processing_time": "2-3 days",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/jVcCYwJ/florals-watercolor.jpg",
+    "item_name": "Floral Watercolor Art",
+    "subcategory_Name": "Watercolour Painting",
+    "short_description": "A delicate watercolor painting featuring colorful flowers in full bloom.",
+    "price": 150,
+    "rating": 4.2,
+    "customization": "Yes",
+    "processing_time": "2 weeks",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/543g1gw/pet-watercolour.jpg",
+    "item_name": "Animal Watercolor Portrait",
+    "subcategory_Name": "Watercolour Painting",
+    "short_description": "A charming watercolor portrait capturing the essence of a beloved pet.",
+    "price": 170,
+    "rating": 4.4,
+    "customization": "Yes",
+    "processing_time": "1-2 weeks",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/6bMmyr2/water.jpg",
+    "item_name": "Realistic Oil Portrait",
+    "subcategory_Name": "Oil Painting",
+    "short_description": "An impressive oil painting showcasing a lifelike portrait with intricate details.",
+    "price": 300,
+    "rating": 4.8,
+    "customization": "Yes",
+    "processing_time": "2-3 weeks",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/GJfTjvG/oil-painting.jpg",
+    "item_name": "Abstract Oil Painting",
+    "subcategory_Name": "Oil Painting",
+    "short_description": "A captivating abstract oil painting that sparks imagination and emotion.",
+    "price": 280,
+    "rating": 4.7,
+    "customization": "No",
+    "processing_time": "3-4 weeks",
+    "stockStatus": "In stock"
+  },
+  {
+    "id": 9,
+    "image": "https://i.ibb.co/BwkHtLj/carcoal-sketchings.jpg",
+    "item_name": "Figure Charcoal Sketch",
+    "subcategory_Name": "Charcoal Sketching",
+    "short_description": "A dynamic charcoal sketch capturing the movement of dog.",
+    "price": 190,
+    "rating": 4.6,
+    "customization": "Yes",
+    "processing_time": "1-2 weeks",
+    "stockStatus": "In stock"
+  }
+]

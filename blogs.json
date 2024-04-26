@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/n1H3bKG/landscape-painting.jpg",
+    "title": "Exploring the Beauty of Watercolor Painting",
+    "name": "ArtEnthusiast123",
+    "description": "Discover the magic of watercolor painting and learn tips for creating stunning artworks.",
+    "publishedDate": "June 1, 2020",
+    "views": 1032
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/n1H3bKG/landscape-painting.jpg",
+    "title": "Mastering the Art of Charcoal Sketching",
+    "name": "SketchMaster",
+    "description": "Unlock the secrets of charcoal sketching and elevate your drawing skills to the next level.",
+    "publishedDate": "June 6, 2020",
+    "views": 876
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/n1H3bKG/landscape-painting.jpg",
+    "title": "The Beauty of Landscape Painting",
+    "name": "NaturePainter",
+    "description": "Explore the allure of landscape painting and learn techniques to portray nature's beauty on canvas.",
+    "publishedDate": "June 1, 2023",
+    "views": 1245
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/n1H3bKG/landscape-painting.jpg",
+    "title": "Unleashing Creativity: The World of Art",
+    "name": "AbstractArtiste",
+    "description": "Dive into the realm of abstract art and unleash your creativity with bold colors.",
+    "publishedDate": "June 1, 2020",
+    "views": 987
+  }
+]
