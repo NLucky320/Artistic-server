@@ -25,11 +25,11 @@ async function run() {
 
     const craftCollections = client.db("craftDB").collection("crafts");
 
-    // app.get("/coffee", async (req, res) => {
-    //   const cursor = coffeeCollection.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // });
+    app.get("/crafts", async (req, res) => {
+      const cursor = craftCollections.find();
+      const result = await cursor.toArray();
+      res.send(result);
+    });
 
     // app.get("/coffee/:id", async (req, res) => {
     //   const id = req.params.id;
@@ -38,12 +38,12 @@ async function run() {
     //   res.send(result);
     // });
 
-    // app.post("/coffee", async (req, res) => {
-    //   const newCoffee = req.body;
-    //   console.log(newCoffee);
-    //   const result = await coffeeCollection.insertOne(newCoffee);
-    //   res.send(result);
-    // });
+    app.post("/crafts", async (req, res) => {
+      const newCrafts = req.body;
+      console.log(newCrafts);
+      const result = await craftCollections.insertOne(newCrafts);
+      res.send(result);
+    });
 
     // app.put("/coffee/:id", async (req, res) => {
     //   const id = req.params.id;
@@ -91,10 +91,10 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("art and craft server");
 });
-app.get("/crafts", (req, res) => {
-  res.send(crafts);
-  // console.log(crafts);
-});
+// app.get("/crafts", (req, res) => {
+//   res.send(crafts);
+//   // console.log(crafts);
+// });
 app.get("/blogs", (req, res) => {
   res.send(blogs);
   // console.log(crafts);
