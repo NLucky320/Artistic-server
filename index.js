@@ -29,14 +29,16 @@ async function run() {
       const cursor = craftCollections.find();
       const result = await cursor.toArray();
       res.send(result);
+      console.log(result);
     });
 
-    // app.get("/coffee/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: new ObjectId(id) };
-    //   const result = await coffeeCollection.findOne(query);
-    //   res.send(result);
-    // });
+    app.get("/crafts/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await craftCollections.findOne(query);
+      res.send(result);
+      console.log(result);
+    });
 
     app.post("/crafts", async (req, res) => {
       const newCrafts = req.body;
@@ -44,33 +46,43 @@ async function run() {
       const result = await craftCollections.insertOne(newCrafts);
       res.send(result);
     });
+    app.get("/myArt/:email", async (req, res) => {
+      console.log(req.params.email);
+      const result = await craftCollections
+        .find({ email: req.params.email })
+        .sort({ customization: 1 }) // Sort by the "customization" field in descending order
+        .toArray();
+      res.send(result);
+    });
 
-    // app.put("/coffee/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const filter = { _id: new ObjectId(id) };
-    //   const options = { upsert: true };
-    //   const updatedCoffee = req.body;
-    //   const coffee = {
-    //     $set: {
-    //       name: updatedCoffee.name,
-    //       quantity: updatedCoffee.quantity,
-    //       supplier: updatedCoffee.supplier,
-    //       taste: updatedCoffee.taste,
-    //       category: updatedCoffee.category,
-    //       details: updatedCoffee.details,
-    //       photo: updatedCoffee.photo,
-    //     },
-    //   };
-    //   const result = await coffeeCollection.updateOne(filter, coffee, options);
-    //   res.send(result);
-    // });
+    app.put("/crafts/:id", async (req, res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updatedCraft = req.body;
+      const craft = {
+        $set: {
+          item_Name: updatedCraft.item_Name,
+          subcategory_Name: updatedCraft.subcategory_Name,
+          short_description: updatedCraft.short_description,
+          price: updatedCraft.price,
+          rating: updatedCraft.rating,
+          customization: updatedCraft.customization,
+          processing_time: updatedCraft.processing_time,
+          stockStatus: updatedCraft.stockStatus,
+          image: updatedCraft.image,
+        },
+      };
+      const result = await craftCollections.updateOne(filter, craft, options);
+      res.send(result);
+    });
 
-    // app.delete("/coffee/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   const query = { _id: new ObjectId(id) };
-    //   const result = await coffeeCollection.deleteOne(query);
-    //   res.send(result);
-    // });
+    app.delete("/crafts/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      const result = await craftCollections.deleteOne(query);
+      res.send(result);
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
@@ -91,19 +103,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("art and craft server");
 });
-// app.get("/crafts", (req, res) => {
-//   res.send(crafts);
-//   // console.log(crafts);
-// });
 app.get("/blogs", (req, res) => {
   res.send(blogs);
-  // console.log(crafts);
-});
-app.get("/crafts/:id", (req, res) => {
-  const id = req.params.id;
-  const craft = crafts.find((craft) => craft.id == id) || {};
-  res.send(craft);
-  // console.log(crafts);
 });
 
 app.listen(port, () => {
