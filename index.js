@@ -14,6 +14,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://golden-fenglisu-f29d2d.netlify.app",
+      "https://assignment-10-d476b.web.app",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     withCredentials: true,
