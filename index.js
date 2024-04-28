@@ -1,16 +1,20 @@
 const express = require("express");
 const cors = require("cors");
-const crafts = require("./data.json");
+
 const blogs = require("./blogs.json");
 require("dotenv").config();
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const app = express();
 const port = process.env.PORT || 5000;
 
+//MIDDLEWARE
 // app.use(cors());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173",
+      "https://golden-fenglisu-f29d2d.netlify.app",
+    ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     withCredentials: true,
   })
@@ -34,12 +38,15 @@ async function run() {
     // await client.connect();
 
     const craftCollections = client.db("craftDB").collection("crafts");
+    const subcategoryCollections = client
+      .db("craftDB")
+      .collection("subcategory");
 
     app.get("/crafts", async (req, res) => {
       const cursor = craftCollections.find();
       const result = await cursor.toArray();
       res.send(result);
-      console.log(result);
+      // console.log(result);
     });
 
     app.get("/crafts/:id", async (req, res) => {
@@ -47,7 +54,7 @@ async function run() {
       const query = { _id: new ObjectId(id) };
       const result = await craftCollections.findOne(query);
       res.send(result);
-      console.log(result);
+      // console.log(result);
     });
 
     app.post("/crafts", async (req, res) => {
@@ -57,10 +64,17 @@ async function run() {
       res.send(result);
     });
     app.get("/myArt/:email", async (req, res) => {
-      console.log(req.params.email);
+      // console.log(req.params.email);
       const result = await craftCollections
         .find({ email: req.params.email })
-        .sort({ customization: 1 }) // Sort by the "customization" field in descending order
+        .toArray();
+      res.send(result);
+    });
+
+    app.get("/subcategory/:subcategory_Name", async (req, res) => {
+      const subcategoryName = req.params.subcategory_Name;
+      const result = await craftCollections
+        .find({ subcategory_Name: subcategoryName })
         .toArray();
       res.send(result);
     });
@@ -94,6 +108,19 @@ async function run() {
       res.send(result);
     });
 
+    app.get("/artsubcategory", async (req, res) => {
+      const cursor = subcategoryCollections.find();
+      const result = await cursor.toArray();
+      res.send(result);
+      // console.log(result);
+    });
+    app.post("/artsubcategory", async (req, res) => {
+      const newSubcategory = req.body;
+      console.log(newSubcategory);
+      const result = await subcategoryCollections.insertOne(newSubcategory);
+      res.send(result);
+    });
+
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
     console.log(
@@ -105,8 +132,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
-//MIDDLEWARE
 
 app.get("/", (req, res) => {
   res.send("art and craft server");
